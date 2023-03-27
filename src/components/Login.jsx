@@ -40,28 +40,6 @@ const Login = () => {
                 })
         }
     });
-
-    // const loginForm = async (e) => {
-    //     e.preventDefault();
-    //     const formData = new FormData()
-    //     formData.append('email', email);
-    //     formData.append('password', password);
-
-    //     await axios.post(`http://localhost:8000/api/login`, formData)
-    //         .then(({ data }) => {
-    //             localStorage.setItem('token-info', JSON.stringify(data));
-    //             Swal.fire({
-    //                 icon: "success",
-    //                 text: data.message
-    //             })
-    //             navigate('/products');
-    //         }).catch(({ response }) => {
-    //             Swal.fire({
-    //                 text: response.data.message,
-    //                 icon: "error"
-    //             })
-    //         })
-    // }
     return (
         <div className="container">
             <div className="form-box">

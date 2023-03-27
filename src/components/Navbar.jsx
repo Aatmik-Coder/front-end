@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({login}) => {
     const navigate = useNavigate();
-    const[isloggedIn, setIsLoggedIn] = useState(localStorage.getItem('token-info'));
+    const[isloggedIn, setIsLoggedIn] = useState(login);
 
     useEffect(() => {
         if(!isloggedIn){
             navigate('/login');
         }
-    },[isloggedIn]);
+        console.log("logged out");
+    },[]);
+    
     const handleLogout = () => {
         setIsLoggedIn(localStorage.removeItem('token-info'));     
      }

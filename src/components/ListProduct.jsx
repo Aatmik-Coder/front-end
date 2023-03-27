@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 import Swal from 'sweetalert2'
+import Navbar from './Navbar';
 
 export default function ListProduct() {
 

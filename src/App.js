@@ -14,14 +14,19 @@ import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('token-info'));
+  const [loggedIn, setLoggedIn] = React.useState(null);
+
   React.useEffect(() => {
-    <Navbar login={setIsLoggedIn(isLoggedIn)}/>
+    const userData = localStorage.getItem('token-info');
+    if(userData) {
+      setLoggedIn(userData);
+    }
+    console.log("this is app component");
   },[]);
 
   return (
     <Router>
-      <Navbar/>
+      <Navbar login={loggedIn}/>
       <Routes>
         <Route path="/product/create" element={<CreateProduct/>}></Route>
         <Route path="/product/edit/:id" element={<EditProduct/>}></Route>
