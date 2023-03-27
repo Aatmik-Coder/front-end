@@ -14,12 +14,14 @@ import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState(null);
+  const [loggedIn, setLoggedIn] = React.useState(0);
 
   React.useEffect(() => {
     const userData = localStorage.getItem('token-info');
+    console.log('userData',userData);
+    console.log('loggedIn',loggedIn);
     if(userData) {
-      setLoggedIn(userData);
+      setLoggedIn(1);
     }
     console.log("this is app component");
   },[]);

@@ -3,17 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = ({login}) => {
     const navigate = useNavigate();
-    const[isloggedIn, setIsLoggedIn] = useState(login);
 
     useEffect(() => {
-        if(!isloggedIn){
+        if(!login){
             navigate('/login');
         }
         console.log("logged out");
     },[]);
     
     const handleLogout = () => {
-        setIsLoggedIn(localStorage.removeItem('token-info'));     
+        //setIsLoggedIn(0);     
      }
 
     return (
@@ -27,7 +26,7 @@ const Navbar = ({login}) => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             {
-                                isloggedIn ? <>
+                                login ? <>
                                     <li className="nav-item">
                                         <Link to={"/"} className="nav-link" aria-current="page">Home</Link>
                                     </li>
